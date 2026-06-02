@@ -204,6 +204,7 @@ class _HomeScrState extends State<HomeScr> {
                     profileName: 'Peter Dammy',
                     postDate: '16 min ago',
                     postLocation: 'Manchester, England',
+                    hasText: true,
                     hasImage: true,
                     postText:
                         'Today marks the launching of the socially app, soar through what the world has to offer to you',
@@ -217,6 +218,7 @@ class _HomeScrState extends State<HomeScr> {
                     postLocation: 'Illinois, Chicago',
                     postText:
                         'Name is devCoolJoe, front-end developer and back-end developer. I deliver all projects with precise skills',
+                    hasText: true,
                     hasImage: false,
                   ),
                   20.verticalSpace,
@@ -225,8 +227,9 @@ class _HomeScrState extends State<HomeScr> {
                     profileName: 'Peter Dammy',
                     postDate: '3 hours ago',
                     postLocation: 'Manchester, UK',
+                    hasText: false,
                     hasImage: true,
-                    postImage: 'assets/images/fourth.png',
+                    postImage: 'assets/images/img3.png',
                   ),
                   20.verticalSpace,
                   Container(
@@ -303,6 +306,7 @@ class _HomeScrState extends State<HomeScr> {
                     postLocation: 'Illinois, Chicago',
                     postText:
                         'Hi fellas, using this platform to announce i am an excellent writer and a well renowed author of several books',
+                    hasText: true,
                     hasImage: false,
                   ),
                 ],
