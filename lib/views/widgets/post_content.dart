@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socially/views/screens/route_Scr/post_scr/post_content_scr.dart';
+import 'package:socially/views/screens/route_Scr/post_scr/view_image_scr.dart';
+import 'package:socially/views/widgets/image_content.dart';
 import 'package:socially/views/widgets/touch_opacity.dart';
 
 class PostContent extends StatefulWidget {
@@ -9,7 +11,7 @@ class PostContent extends StatefulWidget {
   final String postDate;
   final String? postLocation;
   final String? postText;
-  final String? postImage;
+  final List<String>? postImage;
   final bool? hasText;
   final bool? hasImage;
   final bool? isLiked;
@@ -110,7 +112,7 @@ class _PostContentState extends State<PostContent> {
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
-                            color: Colors.grey.shade500,
+                            color: Colors.white,
                             fontFamily: 'Campton',
                             height: 1.1.h,
                           ),
@@ -133,7 +135,7 @@ class _PostContentState extends State<PostContent> {
                             Icon(
                               Icons.circle_rounded,
                               size: 6.w,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                             ),
                             4.horizontalSpace,
                             Text(
@@ -152,7 +154,7 @@ class _PostContentState extends State<PostContent> {
                             Icon(
                               Icons.location_on_rounded,
                               size: 8.w,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                             ),
                           ],
                         ),
@@ -161,11 +163,7 @@ class _PostContentState extends State<PostContent> {
                   ),
                 ),
                 10.horizontalSpace,
-                Icon(
-                  Icons.more_horiz_rounded,
-                  size: 16.w,
-                  color: Colors.grey.shade500,
-                ),
+                Icon(Icons.more_horiz_rounded, size: 16.w, color: Colors.white),
               ],
             ),
             12.verticalSpace,
@@ -177,20 +175,29 @@ class _PostContentState extends State<PostContent> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
-                  color: Colors.grey.shade500,
+                  color: Colors.white,
                   fontFamily: 'Campton',
                   height: 1.1.h,
                 ),
               ),
             12.verticalSpace,
-            if (widget.hasImage == true)
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.r),
-                  color: Colors.grey.shade800,
-                ),
-                child: Image.asset(widget.postImage ?? '', fit: BoxFit.cover),
+            if (widget.postImage != null && widget.postImage!.isNotEmpty)
+              buildPostImages(
+                widget.postImage!,
+                onImageTap: (index) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ViewImageScr(
+                        postImage: widget.postImage!,
+                        initialIndex: index,
+                        profilePic: widget.profilePic,
+                        profileName: widget.profileName,
+                        haSiMage: true,
+                      ),
+                    ),
+                  );
+                },
               ),
             12.verticalSpace,
             SizedBox(
@@ -213,22 +220,14 @@ class _PostContentState extends State<PostContent> {
                         : Icon(
                             Icons.favorite_border_rounded,
                             size: 16.w,
-                            color: Colors.grey.shade500,
+                            color: Colors.white,
                           ),
                   ),
 
                   8.horizontalSpace,
-                  Icon(
-                    Icons.comment_outlined,
-                    size: 16.w,
-                    color: Colors.grey.shade500,
-                  ),
+                  Icon(Icons.comment_outlined, size: 16.w, color: Colors.white),
                   8.horizontalSpace,
-                  Icon(
-                    Icons.share_rounded,
-                    size: 16.w,
-                    color: Colors.grey.shade500,
-                  ),
+                  Icon(Icons.share_rounded, size: 16.w, color: Colors.white),
                 ],
               ),
             ),

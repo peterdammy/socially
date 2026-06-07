@@ -72,7 +72,7 @@ class _StoryWidgState extends State<StoryWidg> {
             widget.yourStory ? 'Your Story' : widget.storyTitle ?? '',
             style: TextStyle(
               fontSize: 14.sp,
-              color: Colors.grey.shade500,
+              color: Colors.white,
               fontFamily: 'Campton',
               fontWeight: FontWeight.w500,
               height: 1.1.h,

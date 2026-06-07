@@ -78,7 +78,7 @@ class _SettingsScrState extends State<SettingsScr> {
                     'Allow notifications',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w400,
                       height: 1.1.h,
@@ -118,7 +118,7 @@ class _SettingsScrState extends State<SettingsScr> {
                     'Face ID',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w400,
                       height: 1.1.h,
@@ -158,7 +158,7 @@ class _SettingsScrState extends State<SettingsScr> {
                     'Allow notifications',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w400,
                       height: 1.1.h,
@@ -198,7 +198,7 @@ class _SettingsScrState extends State<SettingsScr> {
                     'Privacy & Help Center',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w400,
                       height: 1.1.h,

@@ -33,7 +33,7 @@ class _ChatDetailScrState extends State<ChatDetailScr> {
                     child: Icon(
                       Icons.arrow_back_ios,
                       size: 18.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                     ),
                   ),
                   4.horizontalSpace,
@@ -82,7 +82,7 @@ class _ChatDetailScrState extends State<ChatDetailScr> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w500,
                       height: 1.1.h,
@@ -100,7 +100,7 @@ class _ChatDetailScrState extends State<ChatDetailScr> {
                     child: Icon(
                       Icons.more_vert,
                       size: 25.w,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -117,7 +117,7 @@ class _ChatDetailScrState extends State<ChatDetailScr> {
                     bottomLeft: Radius.circular(12.r),
                     bottomRight: Radius.circular(12.r),
                   ),
-                  color: Colors.grey.shade500,
+                  color: Colors.white,
                   image: DecorationImage(
                     image: AssetImage('assets/images/img4.png'),
                     fit: BoxFit.cover,

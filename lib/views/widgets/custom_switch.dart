@@ -24,7 +24,7 @@ class _CustomSwitchState extends State<CustomSwitch> {
         decoration: BoxDecoration(
           color: widget.value
               ? Color(0xff5c768d) // active track
-              : Colors.grey.shade500, // inactive track
+              : Colors.white, // inactive track
           borderRadius: BorderRadius.circular(20.r),
         ),
         child: Padding(

@@ -54,7 +54,7 @@ class _SharedLocationsTabState extends State<SharedLocationsTab> {
                       bottomLeft: Radius.circular(12.r),
                       bottomRight: Radius.circular(12.r),
                     ),
-                    color: Colors.grey.shade500.withValues(alpha: 0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

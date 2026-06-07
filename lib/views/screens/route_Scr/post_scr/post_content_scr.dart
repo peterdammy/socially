@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:socially/views/screens/route_Scr/post_scr/view_image_scr.dart';
+import 'package:socially/views/widgets/image_content.dart';
 import 'package:socially/views/widgets/socialtxtf.dart';
 import 'package:socially/views/widgets/touch_opacity.dart';
 
@@ -9,7 +11,7 @@ class PostContentScr extends StatefulWidget {
   final String postDate;
   final String? postLocation;
   final String? postText;
-  final String? postImage;
+  final List<String>? postImage;
   final bool? hasText;
   final bool? hasImage;
   final bool? isLiked;
@@ -146,7 +148,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -171,7 +173,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                     Icon(
                                       Icons.location_on_rounded,
                                       size: 8.w,
-                                      color: Colors.grey.shade500,
+                                      color: Colors.white,
                                     ),
                                   ],
                                 ),
@@ -192,34 +194,32 @@ class _PostContentScrState extends State<PostContentScr> {
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                           fontFamily: 'Campton',
                           height: 1.1.h,
                         ),
                       ),
                     ),
                   12.verticalSpace,
-                  if (widget.hasImage == true && widget.postImage != null)
+                  if (widget.postImage != null && widget.postImage!.isNotEmpty)
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.w),
-                      child: Container(
-                        height: 300.h,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.r),
-                          color: Colors.grey.shade800,
-                          border: Border.all(
-                            width: 1.w,
-                            color: Color(0xff5c768d),
-                            strokeAlign: BorderSide.strokeAlignOutside,
-                          ),
-                        ),
-                        child: TouchOpacity(
-                          child: Image.asset(
-                            widget.postImage ?? '',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                      child: buildPostImages(
+                        widget.postImage!,
+                        onImageTap: (index) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ViewImageScr(
+                                postImage: widget.postImage!,
+                                initialIndex: index,
+                                profilePic: widget.profilePic,
+                                profileName: widget.profileName,
+                                haSiMage: true,
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   12.verticalSpace,
@@ -242,7 +242,7 @@ class _PostContentScrState extends State<PostContentScr> {
                         Icon(
                           Icons.circle_rounded,
                           size: 6.w,
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                         ),
                         4.horizontalSpace,
                         Text(
@@ -282,7 +282,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   : Icon(
                                       Icons.favorite_border_rounded,
                                       size: 24.w,
-                                      color: Colors.grey.shade500,
+                                      color: Colors.white,
                                     ),
                             ),
                             6.horizontalSpace,
@@ -291,7 +291,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                                 fontFamily: 'Campton',
                                 height: 1.1.h,
                               ),
@@ -304,7 +304,7 @@ class _PostContentScrState extends State<PostContentScr> {
                             Icon(
                               Icons.comment_outlined,
                               size: 24.w,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                             ),
                             6.horizontalSpace,
                             Text(
@@ -312,7 +312,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                                 fontFamily: 'Campton',
                                 height: 1.1.h,
                               ),
@@ -325,7 +325,7 @@ class _PostContentScrState extends State<PostContentScr> {
                             Icon(
                               Icons.share_rounded,
                               size: 24.w,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                             ),
                             6.horizontalSpace,
                             Text(
@@ -333,7 +333,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                                 fontFamily: 'Campton',
                                 height: 1.1.h,
                               ),
@@ -358,7 +358,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   : Icon(
                                       Icons.bookmark_outline,
                                       size: 24.w,
-                                      color: Colors.grey.shade500,
+                                      color: Colors.white,
                                     ),
                             ),
                             6.horizontalSpace,
@@ -367,7 +367,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                                 fontFamily: 'Campton',
                                 height: 1.1.h,
                               ),
@@ -378,11 +378,7 @@ class _PostContentScrState extends State<PostContentScr> {
                     ),
                   ),
                   12.verticalSpace,
-                  Divider(
-                    color: Colors.grey.shade500,
-                    thickness: 1.h,
-                    height: 1.h,
-                  ),
+                  Divider(color: Colors.white, thickness: 1.h, height: 1.h),
                   12.verticalSpace,
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12.w),
@@ -421,7 +417,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               bottomRight: Radius.elliptical(12, 6).r,
                             ),
                             border: Border.all(
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               width: 1.5.w,
                               strokeAlign: BorderSide.strokeAlignOutside,
                             ),
@@ -434,7 +430,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -445,7 +441,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -475,7 +471,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                       : Icon(
                                           Icons.favorite_border_rounded,
                                           size: 14.w,
-                                          color: Colors.grey.shade500,
+                                          color: Colors.white,
                                         ),
                                 ),
                                 6.horizontalSpace,
@@ -484,7 +480,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -500,7 +496,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -509,7 +505,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 Icon(
                                   Icons.arrow_drop_down_rounded,
                                   size: 14.w,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),
@@ -556,7 +552,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               bottomRight: Radius.elliptical(12, 6).r,
                             ),
                             border: Border.all(
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               width: 1.5.w,
                               strokeAlign: BorderSide.strokeAlignOutside,
                             ),
@@ -569,7 +565,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -580,7 +576,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -610,7 +606,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                       : Icon(
                                           Icons.favorite_border_rounded,
                                           size: 14.w,
-                                          color: Colors.grey.shade500,
+                                          color: Colors.white,
                                         ),
                                 ),
                                 6.horizontalSpace,
@@ -619,7 +615,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -635,7 +631,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -644,7 +640,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 Icon(
                                   Icons.arrow_drop_down_rounded,
                                   size: 14.w,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),
@@ -691,7 +687,7 @@ class _PostContentScrState extends State<PostContentScr> {
                               bottomRight: Radius.elliptical(12, 6).r,
                             ),
                             border: Border.all(
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               width: 1.5.w,
                               strokeAlign: BorderSide.strokeAlignOutside,
                             ),
@@ -704,7 +700,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -715,7 +711,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                   fontFamily: 'Campton',
                                   height: 1.1.h,
                                 ),
@@ -745,7 +741,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                       : Icon(
                                           Icons.favorite_border_rounded,
                                           size: 14.w,
-                                          color: Colors.grey.shade500,
+                                          color: Colors.white,
                                         ),
                                 ),
                                 6.horizontalSpace,
@@ -754,7 +750,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -770,7 +766,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     height: 1.1.h,
                                   ),
@@ -779,7 +775,7 @@ class _PostContentScrState extends State<PostContentScr> {
                                 Icon(
                                   Icons.arrow_drop_down_rounded,
                                   size: 14.w,
-                                  color: Colors.grey.shade500,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),
@@ -788,6 +784,7 @@ class _PostContentScrState extends State<PostContentScr> {
                       ],
                     ),
                   ),
+                  12.verticalSpace,
                 ],
               ),
             ),
@@ -804,7 +801,7 @@ class _PostContentScrState extends State<PostContentScr> {
         decoration: BoxDecoration(
           color: const Color(0xff1e1e1e),
           border: Border(
-            top: BorderSide(color: Colors.grey.shade500, width: 1.w),
+            top: BorderSide(color: Colors.white, width: 1.w),
           ),
         ),
         child: Row(
@@ -816,7 +813,7 @@ class _PostContentScrState extends State<PostContentScr> {
               ),
             ),
             12.horizontalSpace,
-            Icon(Icons.mic_rounded, size: 20.sp, color: Colors.grey.shade500),
+            Icon(Icons.mic_rounded, size: 20.sp, color: Colors.white),
           ],
         ),
       ),

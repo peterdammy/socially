@@ -107,11 +107,7 @@ class _ChatScrState extends State<ChatScr> {
           20.verticalSpace,
           SizedBox(
             width: double.infinity,
-            child: Divider(
-              color: Colors.grey.shade500,
-              height: 1.h,
-              thickness: 1.sp,
-            ),
+            child: Divider(color: Colors.white, height: 1.h, thickness: 1.sp),
           ),
           Expanded(
             child: Padding(

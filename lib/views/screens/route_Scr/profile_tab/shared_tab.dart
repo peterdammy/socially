@@ -55,7 +55,7 @@ class _SharedTabState extends State<SharedTab> {
                       bottomLeft: Radius.circular(12.r),
                       bottomRight: Radius.circular(12.r),
                     ),
-                    color: Colors.grey.shade500.withValues(alpha: 0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

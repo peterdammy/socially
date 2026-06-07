@@ -75,7 +75,7 @@ class _ChatListState extends State<ChatList> {
                       : Icon(
                           Icons.brightness_1_rounded,
                           size: 10.sp,
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                         ),
                 ),
               ],
@@ -104,7 +104,7 @@ class _ChatListState extends State<ChatList> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey.shade500,
+                    color: Colors.white,
                     fontFamily: 'Campton',
                     fontWeight: FontWeight.w500,
                     height: 1.1.h,
@@ -121,7 +121,7 @@ class _ChatListState extends State<ChatList> {
                 maxLines: 1,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: Colors.grey.shade500,
+                  color: Colors.white,
                   fontFamily: 'Campton',
                   fontWeight: FontWeight.w500,
                   height: 1.1.h,
@@ -157,12 +157,12 @@ class _ChatListState extends State<ChatList> {
                     Icon(
                       Icons.brightness_1_rounded,
                       size: 8.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                     ),
                     Icon(
                       Icons.brightness_1_rounded,
                       size: 8.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                     ),
                   ],
                 ),

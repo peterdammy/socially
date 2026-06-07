@@ -70,7 +70,7 @@ void viewStory(BuildContext context, {required List<String> stories}) {
                                     decoration: BoxDecoration(
                                       color: index <= currentStoryIndex
                                           ? Colors.grey.shade300
-                                          : Colors.grey.shade500,
+                                          : Colors.white,
                                       borderRadius: BorderRadius.circular(12.r),
                                     ),
                                   ),
@@ -117,7 +117,7 @@ void viewStory(BuildContext context, {required List<String> stories}) {
                                           style: TextStyle(
                                             fontSize: 16.sp,
                                             fontWeight: FontWeight.w600,
-                                            color: Colors.grey.shade500,
+                                            color: Colors.white,
                                             fontFamily: 'Campton',
                                             height: 1.1.h,
                                           ),
@@ -142,7 +142,7 @@ void viewStory(BuildContext context, {required List<String> stories}) {
                                   child: Icon(
                                     Icons.close_rounded,
                                     size: 24.w,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -173,7 +173,7 @@ void viewStory(BuildContext context, {required List<String> stories}) {
                             Icon(
                               Icons.mic_rounded,
                               size: 20.sp,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                             ),
                           ],
                         ),

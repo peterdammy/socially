@@ -16,8 +16,9 @@ void showProfileSettings(BuildContext context) {
             width: 300.w,
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
             decoration: BoxDecoration(
+              color: const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12.r),
-              color: Color(0xff1e1e1e).withValues(alpha: 0.90),
+              border: Border.all(color: const Color(0xff5c768d)),
             ),
             child: ListView(
               shrinkWrap: true,
@@ -30,7 +31,7 @@ void showProfileSettings(BuildContext context) {
                       '@peterdammy',
                       style: TextStyle(
                         fontSize: 14.sp,
-                        color: Colors.grey.shade500,
+                        color: Colors.white,
                         fontFamily: 'Campton',
                         fontWeight: FontWeight.w500,
                         height: 1.1.h,
@@ -46,7 +47,7 @@ void showProfileSettings(BuildContext context) {
                     //   width: 12.w,
                     //   decoration: BoxDecoration(
                     //     border: Border.all(
-                    //       color: Colors.grey.shade500,
+                    //       color: Colors.white,
                     //       width: 1.w,
                     //       strokeAlign: BorderSide.strokeAlignOutside,
                     //     ),
@@ -70,17 +71,13 @@ void showProfileSettings(BuildContext context) {
                         'Add another account',
                         style: TextStyle(
                           fontSize: 14.sp,
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                           fontFamily: 'Campton',
                           fontWeight: FontWeight.w500,
                           height: 1.1.h,
                         ),
                       ),
-                      Icon(
-                        Icons.add_rounded,
-                        size: 20.sp,
-                        color: Colors.grey.shade500,
-                      ),
+                      Icon(Icons.add_rounded, size: 20.sp, color: Colors.white),
                     ],
                   ),
                 ),
@@ -97,7 +94,7 @@ void showProfileSettings(BuildContext context) {
                         'Settings',
                         style: TextStyle(
                           fontSize: 14.sp,
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                           fontFamily: 'Campton',
                           fontWeight: FontWeight.w500,
                           height: 1.1.h,
@@ -106,7 +103,7 @@ void showProfileSettings(BuildContext context) {
                       Icon(
                         Icons.settings_rounded,
                         size: 20.sp,
-                        color: Colors.grey.shade500,
+                        color: Colors.white,
                       ),
                     ],
                   ),

@@ -25,11 +25,7 @@ void addToStory(BuildContext context) {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(
-                    Icons.close,
-                    size: 24.sp,
-                    color: Colors.grey.shade500,
-                  ),
+                  child: Icon(Icons.close, size: 24.sp, color: Colors.white),
                 ),
                 16.verticalSpace,
                 Expanded(
@@ -62,7 +58,7 @@ void addToStory(BuildContext context) {
                   ),
                 ),
                 2.verticalSpace,
-                Divider(color: Colors.grey.shade500, height: 2.h, thickness: 1),
+                Divider(color: Colors.white, height: 2.h, thickness: 1),
                 16.verticalSpace,
               ],
             ),

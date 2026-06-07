@@ -109,7 +109,7 @@ class _HomeScrState extends State<HomeScr> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14.sp,
-                  color: Colors.grey.shade500,
+                  color: Colors.white,
                   fontFamily: 'Campton',
                   fontWeight: FontWeight.w500,
                   height: 1.1.h,
@@ -208,7 +208,12 @@ class _HomeScrState extends State<HomeScr> {
                     hasImage: true,
                     postText:
                         'Today marks the launching of the socially app, soar through what the world has to offer to you',
-                    postImage: 'assets/images/onb.PNG',
+                    postImage: [
+                      'assets/images/onb.PNG',
+                      'assets/images/img3.png',
+                      'assets/images/img2.png',
+                      'assets/images/img1.png',
+                    ],
                   ),
                   20.verticalSpace,
                   PostContent(
@@ -229,7 +234,7 @@ class _HomeScrState extends State<HomeScr> {
                     postLocation: 'Manchester, UK',
                     hasText: false,
                     hasImage: true,
-                    postImage: 'assets/images/img3.png',
+                    postImage: ['assets/images/img3.png'],
                   ),
                   20.verticalSpace,
                   Container(
@@ -257,7 +262,7 @@ class _HomeScrState extends State<HomeScr> {
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                                 fontFamily: 'Campton',
                                 height: 1.1.h,
                               ),
@@ -267,7 +272,7 @@ class _HomeScrState extends State<HomeScr> {
                               child: Icon(
                                 Icons.more_horiz_rounded,
                                 size: 16.w,
-                                color: Colors.grey.shade500,
+                                color: Colors.white,
                               ),
                             ),
                           ],

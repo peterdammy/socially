@@ -91,7 +91,7 @@ class _ProfileScrState extends State<ProfileScr> {
                     width: double.infinity,
                     height: ScreenUtil().screenHeight * 0.15,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30.r),
                         bottomRight: Radius.circular(30.r),
@@ -156,7 +156,7 @@ class _ProfileScrState extends State<ProfileScr> {
                                   '@peterdammy',
                                   style: TextStyle(
                                     fontSize: 14.sp,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     fontWeight: FontWeight.w500,
                                     height: 1.1.h,
@@ -184,7 +184,7 @@ class _ProfileScrState extends State<ProfileScr> {
                                   'Edit',
                                   style: TextStyle(
                                     fontSize: 14.sp,
-                                    color: Colors.grey.shade500,
+                                    color: Colors.white,
                                     fontFamily: 'Campton',
                                     fontWeight: FontWeight.w500,
                                     height: 1.1.h,
@@ -202,7 +202,7 @@ class _ProfileScrState extends State<ProfileScr> {
                     'Hey Guys!!!, Dammy here. i am flutter software dev and an explorer of only four states',
                     style: TextStyle(
                       fontSize: 14.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w500,
                       height: 1.1.h,
@@ -218,7 +218,7 @@ class _ProfileScrState extends State<ProfileScr> {
                             '1k',
                             style: TextStyle(
                               fontSize: 16.sp,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               fontFamily: 'Campton',
                               fontWeight: FontWeight.w600,
                               height: 1.1.h,
@@ -229,7 +229,7 @@ class _ProfileScrState extends State<ProfileScr> {
                             'Social connections',
                             style: TextStyle(
                               fontSize: 14.sp,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               fontFamily: 'Campton',
                               fontWeight: FontWeight.w400,
                               height: 1.1.h,
@@ -244,7 +244,7 @@ class _ProfileScrState extends State<ProfileScr> {
                             '2k',
                             style: TextStyle(
                               fontSize: 16.sp,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               fontFamily: 'Campton',
                               fontWeight: FontWeight.w600,
                               height: 1.1.h,
@@ -255,7 +255,7 @@ class _ProfileScrState extends State<ProfileScr> {
                             'Socials',
                             style: TextStyle(
                               fontSize: 14.sp,
-                              color: Colors.grey.shade500,
+                              color: Colors.white,
                               fontFamily: 'Campton',
                               fontWeight: FontWeight.w400,
                               height: 1.1.h,
@@ -274,7 +274,7 @@ class _ProfileScrState extends State<ProfileScr> {
                     indicatorSize: TabBarIndicatorSize.label,
                     unselectedLabelStyle: TextStyle(
                       fontSize: 14.sp,
-                      color: Colors.grey.shade500,
+                      color: Colors.white,
                       fontFamily: 'Campton',
                       fontWeight: FontWeight.w400,
                       height: 1.1.h,

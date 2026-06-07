@@ -35,7 +35,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 18.sp,
-                    color: Colors.grey.shade500,
+                    color: Colors.white,
                   ),
                 ),
                 4.horizontalSpace,
@@ -90,7 +90,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: Colors.grey.shade500,
+                    color: Colors.white,
                     fontFamily: 'Campton',
                     fontWeight: FontWeight.w500,
                     height: 1.1.h,
@@ -105,11 +105,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
               child: TouchOpacity(
                 child: SizedBox(
                   height: 30.h,
-                  child: Icon(
-                    Icons.more_vert,
-                    size: 25.w,
-                    color: Colors.grey.shade500,
-                  ),
+                  child: Icon(Icons.more_vert, size: 25.w, color: Colors.white),
                 ),
               ),
             ),
@@ -122,11 +118,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
           6.verticalSpace,
           SizedBox(
             width: double.infinity,
-            child: Divider(
-              color: Colors.grey.shade500,
-              height: 1.h,
-              thickness: 1.sp,
-            ),
+            child: Divider(color: Colors.white, height: 1.h, thickness: 1.sp),
           ),
           Expanded(
             child: Padding(
@@ -170,7 +162,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
-                          color: Colors.grey.shade500,
+                          color: Colors.white,
                           width: 2.w,
                           strokeAlign: BorderSide.strokeAlignOutside,
                         ),
@@ -194,11 +186,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
           ),
           SizedBox(
             width: double.infinity,
-            child: Divider(
-              color: Colors.grey.shade500,
-              height: 1.h,
-              thickness: 1.sp,
-            ),
+            child: Divider(color: Colors.white, height: 1.h, thickness: 1.sp),
           ),
           10.verticalSpace,
           Padding(
@@ -207,11 +195,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.add_rounded,
-                  size: 20.sp,
-                  color: Colors.grey.shade500,
-                ),
+                Icon(Icons.add_rounded, size: 20.sp, color: Colors.white),
                 12.horizontalSpace,
                 SizedBox(
                   width: 300.w,
@@ -221,11 +205,7 @@ class _ChatMsgScrState extends State<ChatMsgScr> {
                   ),
                 ),
                 12.horizontalSpace,
-                Icon(
-                  Icons.mic_rounded,
-                  size: 20.sp,
-                  color: Colors.grey.shade500,
-                ),
+                Icon(Icons.mic_rounded, size: 20.sp, color: Colors.white),
               ],
             ),
           ),
