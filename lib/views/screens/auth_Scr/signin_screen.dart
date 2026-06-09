@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:socially/auth/repo/auth_process.dart';
 import 'package:socially/views/screens/auth_Scr/signup_screen.dart';
 import 'package:socially/views/screens/routes.dart';
 import 'package:socially/views/widgets/socialtxtf.dart';
 import 'package:socially/views/widgets/touch_opacity.dart';
 
-class SigninScreen extends StatefulWidget {
+class SigninScreen extends ConsumerStatefulWidget {
   const SigninScreen({super.key});
 
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  ConsumerState<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen> {
+class _SigninScreenState extends ConsumerState<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,6 +151,15 @@ class _SigninScreenState extends State<SigninScreen> {
                       top: 10.h,
                       bottom: 10.h,
                       child: TouchOpacity(
+                        onTap: () {
+                          ref.read(authServiceProvider).signInWithGoogle();
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Routes(pageIndex: 0),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 40.h,
                           padding: EdgeInsets.symmetric(
